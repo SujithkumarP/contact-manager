@@ -1,0 +1,30 @@
+<LinkTo @route="addcontact" @model=null>
+  <button type="submit" class="btn btn-primary">+ Add New person</button>
+</LinkTo>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Nickname</th>
+      <th scope="col">Birthday</th>
+      <th scope="col">email</th>
+      <th scope="col">MobileNumber</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each this.model as |person|}}
+    <tr>
+      <td>{{person.Name}}</td>
+      <td>{{person.Nickname}}</td>
+      <td>{{person.Birthday}}</td>
+      <td>{{person.email}}</td>
+      <td>{{person.MobileNumber}}</td>
+      <td><LinkTo @route="addcontact" @model={{person.Name}}>
+      <button type="submit" class="btn btn-warning btn-sm">Edit contact</button>
+    </LinkTo></td>
+
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

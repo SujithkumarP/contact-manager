@@ -16,6 +16,18 @@ module.exports = function(environment) {
         Date: false
       }
     },
+    firebase:{
+    apiKey: "AIzaSyDBJ_8OwHkb-Sk74qfe8zWZj5xEvoYu0Fk",
+    authDomain: "contacts-manager-6187a.firebaseapp.com",
+    databaseURL: "https://contacts-manager-6187a.firebaseio.com",
+    projectId: "contacts-manager-6187a",
+    storageBucket: "contacts-manager-6187a.appspot.com",
+    messagingSenderId: "765366703507",
+    appId: "1:765366703507:web:9482e6b7a603b3259f8466",
+    measurementId: "G-CZFV3M7Q8D"
+  },
+
+
 
     APP: {
       // Here you can pass flags/options to your application instance
