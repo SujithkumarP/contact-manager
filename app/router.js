@@ -10,4 +10,5 @@ Router.map(function() {
   this.route('about');
   this.route('home');
   this.route('addcontact',{path:'addcontact/:person_name'});
+  this.route('createcontact');
 });
