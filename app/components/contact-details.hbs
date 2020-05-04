@@ -1,0 +1,54 @@
+
+<div class="text-center h2" >Contact Details</div>
+<div class="container h-100  my-auto">
+  <div class="border border-secondary rounded">
+  <div class="row mt-3 justify-content-center align-self-center">
+    <div class="col-2 h5">
+      <strong>Name :</strong>
+    </div>
+    <div class="col-2 h5 ">
+      {{this.name}}
+    </div>
+  </div>
+  <div class="row justify-content-center align-self-center">
+    <div class="col-2 h5  mt-3">
+      <strong>NickName :</strong>
+    </div>
+    <div class="col-2 h5  mt-3">
+      {{this.nickname}}
+    </div>
+  </div>
+  <div class="row justify-content-center align-self-center">
+    <div class="col-2 h5  mt-3">
+      <strong>DOB :</strong>
+    </div>
+    <div class="col-2 h5  mt-3">
+      {{this.birthday}}
+    </div>
+  </div>
+  <div class="row justify-content-center align-self-center">
+    <div class="col-2 h5  mt-3">
+      <strong>Email :</strong>
+    </div>
+    <div class="col-2 h5  mt-3">
+      {{this.email}}
+    </div>
+  </div>
+  <div class="row justify-content-center align-self-center mb-3">
+    <div class="col-2 h5  mt-3">
+      <strong>Mobile-Number:</strong>
+    </div>
+    <div class="col-2 h5  mt-3">
+      {{this.contact}}
+    </div>
+  </div>
+  <div class="row justify-content-center align-self-center mb-3">
+    <div class="col-4">
+    <LinkTo @route="addcontact" @model={{this.contact}}>
+    <button type="submit" class="btn btn-warning ">Edit contact</button>
+  </LinkTo>
+</div>
+</div>
+
+</div>
+</div>

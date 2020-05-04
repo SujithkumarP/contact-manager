@@ -58,6 +58,8 @@ actions:{
    });
    newc.save();
    alert("Contact Added Successfully");
+   this.get('router').transitionTo('details',this.get('mobilenumber'));
+
 
 
  }
@@ -107,11 +109,11 @@ post.save();
 
 }
 
+this.get('router').transitionTo('details',this.get('pull'));
 
 
  }
 
- this.get('router').transitionTo('home');
 
 }
 
