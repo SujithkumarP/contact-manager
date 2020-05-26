@@ -1,7 +1,6 @@
-<LinkTo @route="createcontact">
+  <LinkTo @route="createcontact">
   <button type="submit" class="btn btn-primary">+ Add New person</button>
 </LinkTo>
-
 <table class="table table-hover">
   <thead class="thead-dark">
     <tr>
@@ -16,13 +15,13 @@
   <tbody>
       {{#each this.model as |person|}}
   <tr>
-      <LinkTo @route="details" @model={{person.MobileNumber}}>
+      <LinkTo @route="details" @model={{person.id}}>
       <td>{{person.Name}}</td></LinkTo>
       <td>{{person.Nickname}}</td>
       <td>{{person.Birthday}}</td>
       <td>{{person.email}}</td>
       <td>{{person.MobileNumber}}</td>
-      <td><LinkTo @route="addcontact" @model={{person.MobileNumber}}>
+      <td><LinkTo @route="addcontact" @model={{person.id}}>
       <button type="submit" class="btn btn-warning btn-sm">Edit contact</button>
     </LinkTo></td>
 

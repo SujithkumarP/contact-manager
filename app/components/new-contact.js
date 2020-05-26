@@ -47,9 +47,12 @@ actions:{
       if(Ember.isEmpty(this.get('pull')))
       {
 
+        var cid=Math.floor(Math.random() * 1000).toString()+Date.now()+Math.random().toString(36).slice(2);
+
+
 
     var newc = this.store.createRecord('contact', {
-    id:this.get('mobilenumber'),
+    id:cid,
      Name: this.get('name'),
      Nickname: this.get('nickname'),
      Birthday: this.get('birthday'),
@@ -58,7 +61,8 @@ actions:{
    });
    newc.save();
    alert("Contact Added Successfully");
-   this.get('router').transitionTo('details',this.get('mobilenumber'));
+
+   this.get('router').transitionTo('details',newc.get('id'));
 
 
 
@@ -66,48 +70,47 @@ actions:{
  else{
 
    let superr=this;
-   if(isEqual(this.get('pull'),this.get('sname')))
-   {
 
 
 
 
-   this.store.findRecord('contact', this.get('sname'), { backgroundReload: false }).then(function(post) {
+
+   this.store.findRecord('contact', this.pull, { backgroundReload: false }).then(function(post) {
      post.set('Name',superr.get('name'));
      post.set('Nickname',superr.get('nickname'));
      post.set('Birthday',superr.get('birthday'));
      post.set('email',superr.get('email'));
-     post.set('MobileNumber',superr.get('pull'));
+     post.set('MobileNumber',superr.get('mobilenumber'));
 
      post.save();
      alert("Contact Updated Successfully");
 
 });
 
-}
-else{
-  var newc = this.store.createRecord('contact', {
-  id:this.get('pull'),
-   Name: this.get('name'),
-   Nickname: this.get('nickname'),
-   Birthday: this.get('birthday'),
-   email:this.get('email'),
-   MobileNumber:this.get('pull')
-  });
-  newc.save();
-  alert("Contact Updated Successfully");
-  this.store.findRecord('contact', this.get('sname'), { backgroundReload: false }).then(function(post) {
 
-    post.deleteRecord();
-post.get('isDeleted'); // => true
-post.save();
-
-    });
-
-
-
-
-}
+// else{
+//   var newc = this.store.createRecord('contact', {
+//   id:this.get('pull'),
+//    Name: this.get('name'),
+//    Nickname: this.get('nickname'),
+//    Birthday: this.get('birthday'),
+//    email:this.get('email'),
+//    MobileNumber:this.get('pull')
+//   });
+//   newc.save();
+//   alert("Contact Updated Successfully");
+//   this.store.findRecord('contact', this.get('sname'), { backgroundReload: false }).then(function(post) {
+//
+//     post.deleteRecord();
+// post.get('isDeleted'); // => true
+// post.save();
+//
+//     });
+//
+//
+//
+//
+// }
 
 this.get('router').transitionTo('details',this.get('pull'));
 
