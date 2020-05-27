@@ -13,49 +13,44 @@ birthday:null,
 email:null,
 mobilenumber:null,
 sname:null,
-
 actions:{
   setValues() {
-    let superr=this;
+    let post=this.model;
 
-      this.store.findRecord('contact', this.model).then(function(post) {
-
-   superr.set('name',post.get('Name'));
-   superr.set('nickname',post.get('Nickname'));
-   superr.set('birthday',post.get('Birthday'));
-   superr.set('email',post.get('email'));
-   superr.set('mobilenumber',post.get('MobileNumber'));
-   superr.set('sname',post.get('MobileNumber'));
+   this.set('name',post.get('Name'));
+   this.set('nickname',post.get('Nickname'));
+   this.set('birthday',post.get('Birthday'));
+   this.set('email',post.get('email'));
+   this.set('mobilenumber',post.get('MobileNumber'));
+   this.set('sname',post.get('MobileNumber'));
 
 
 
 
 
-   });
 
 
 
   },
   add(){
-    let superr=this;
 
 
+    let thiss=this;
 
 
-
-    this.store.findRecord('contact', this.model, { backgroundReload: false }).then(function(post) {
-      post.set('Name',superr.get('name'));
-      post.set('Nickname',superr.get('nickname'));
-      post.set('Birthday',superr.get('birthday'));
-      post.set('email',superr.get('email'));
-      post.set('MobileNumber',superr.get('mobilenumber'));
+    this.store.findRecord('contact', this.model.id, { backgroundReload: false }).then(function(post) {
+      post.set('Name',thiss.get('name'));
+      post.set('Nickname',thiss.get('nickname'));
+      post.set('Birthday',thiss.get('birthday'));
+      post.set('email',thiss.get('email'));
+      post.set('MobileNumber',thiss.get('mobilenumber'));
 
       post.save();
       alert("Contact Updated Successfully");
 
  });
 
- this.get('router').transitionTo('details',this.model);
+ this.get('router').transitionTo('details',this.model.id);
 
 
   }

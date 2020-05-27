@@ -12,4 +12,9 @@ Router.map(function() {
   this.route('addcontact',{path:'addcontact/:person_name'});
   this.route('createcontact');
   this.route('details',{path:'details/:mobile_number'});
+
+  this.route('contact', function() {
+    this.route('new');
+    this.route('edit',{path:'edit/:contact_id'});
+  });
 });

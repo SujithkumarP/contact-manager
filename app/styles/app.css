@@ -65,3 +65,8 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.trash-can{
+  width: 25px;
+    height:25px;
+}

@@ -1,4 +1,4 @@
-  <LinkTo @route="createcontact">
+  <LinkTo @route="contact.new">
   <button type="submit" class="btn btn-primary">+ Add New person</button>
 </LinkTo>
 <table class="table table-hover">
@@ -10,22 +10,33 @@
       <th scope="col">email</th>
       <th scope="col">MobileNumber</th>
       <th scope="col"></th>
+
     </tr>
   </thead>
   <tbody>
       {{#each this.model as |person|}}
-  <tr>
-      <LinkTo @route="details" @model={{person.id}}>
-      <td>{{person.Name}}</td></LinkTo>
+  <tr onclick={{action "showDetails" person.id}}>
+      <td>{{person.Name}}</td>
       <td>{{person.Nickname}}</td>
       <td>{{person.Birthday}}</td>
       <td>{{person.email}}</td>
       <td>{{person.MobileNumber}}</td>
-      <td><LinkTo @route="addcontact" @model={{person.id}}>
+      <td><LinkTo @route="contact.edit" @model={{person.id}}>
       <button type="submit" class="btn btn-warning btn-sm">Edit contact</button>
     </LinkTo></td>
 
+
     </tr>
+    {{#if this.showContent}}
+    {{#if (eq person.id this.isShow)}}
+    <tr>  Hello...
+
+    <ShowDetails @name={{person.Name}} @nickname={{person.Nickname}} @birthday={{person.Birthday}} @email={{person.email}} @mobilenumber={{person.MobileNumber}}/>
+
+  </tr>
+    {{/if}}
+    {{/if}}
+
     {{/each}}
   </tbody>
 </table>
