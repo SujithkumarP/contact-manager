@@ -1,4 +1,8 @@
 import Route from '@ember/routing/route';
+import { getOwner } from '@ember/application';
+import { set } from '@ember/object';
+import Ember from 'ember';
+
 
 export default Route.extend({
 
@@ -13,6 +17,26 @@ export default Route.extend({
   actions:{
     didTransition(){
                   this.controllerFor('contact.edit').send('setValues');
+            },
+    loading() {
+              this.showGlobalLoadingIndicator(...arguments);
             }
-  }
+          },
+
+          showGlobalLoadingIndicator(transition) {
+            let applicationController = getOwner(this).lookup('controller:application');
+
+            if (!applicationController) {
+              return;
+            }
+
+            set(applicationController, 'isLoading', true);
+
+            transition.promise.finally(() => {
+              set(applicationController, 'isLoading', false);
+            });
+
+            return true;
+          }
+
 });

@@ -1,1 +1,8 @@
-<ContactDetails @contact={{this.model}}></ContactDetails>
+<h2 class="center">Contact details</h2>
+<div class=" center  col-5 border border-secondary rounded mt-5 h5">
+<ShowDetails @name={{this.model.Name}} @nickname={{this.model.Nickname}} @birthday={{this.model.Birthday}} @email={{this.model.email}} @mobilenumber={{this.model.MobileNumber}}/>
+
+  <LinkTo @route="contact.edit" @model={{this.model.id}}>
+  <button type="submit" class="btn btn-warning ">Edit contact</button>
+</LinkTo>
+</div>
