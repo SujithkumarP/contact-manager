@@ -6,13 +6,18 @@ isShow:null,
 showContent:false,
 init(){
   this._super(...arguments);
-  this.showContent=false;
+  this.set('showContent',false);
+  this.set('isShow',null);
 
 },
 actions:{
   showDetails(id){
     this.toggleProperty('showContent');
     this.set('isShow',id);
+  },
+  hide(){
+    this.set('showContent',true);
+
   }
 }
 });

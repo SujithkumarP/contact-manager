@@ -22,18 +22,17 @@
       <td>{{person.email}}</td>
       <td>{{person.MobileNumber}}</td>
       <td><LinkTo @route="contact.edit" @model={{person.id}}>
-      <button type="submit" class="btn btn-warning btn-sm">Edit contact</button>
+      <button type="submit" class="btn btn-warning btn-sm" onclick={{action "hide" person.id}}>Edit contact</button>
     </LinkTo></td>
 
-
-    </tr>
+</tr>
     {{#if this.showContent}}
     {{#if (eq person.id this.isShow)}}
-    <tr>  Hello...
+   <div class="left-border">
 
     <ShowDetails @name={{person.Name}} @nickname={{person.Nickname}} @birthday={{person.Birthday}} @email={{person.email}} @mobilenumber={{person.MobileNumber}}/>
 
-  </tr>
+  </div>
     {{/if}}
     {{/if}}
 

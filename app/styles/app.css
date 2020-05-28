@@ -70,3 +70,10 @@ input[type=number] {
   width: 25px;
     height:25px;
 }
+
+.left-border{
+  border-left: 5px solid red;
+  margin-left: 50px;
+  padding-left:20px;
+
+}
