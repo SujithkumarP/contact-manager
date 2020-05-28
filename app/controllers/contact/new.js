@@ -16,7 +16,9 @@ export default Controller.extend({
 
 
   actions:{
-  
+
+
+
     add(){
       // alert("efkm")
 

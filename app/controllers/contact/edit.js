@@ -2,6 +2,10 @@ import Controller from '@ember/controller';
 import { set } from '@ember/object';
 import { getOwner } from '@ember/application';
 import { get } from '@ember/object';
+import Ember from 'ember';
+import { isEqual } from '@ember/utils'
+
+
 
 
 export default Controller.extend({
@@ -21,7 +25,6 @@ export default Controller.extend({
      set(contactController,'birthday',post.get('Birthday'));
      set(contactController,'email',post.get('email'));
      set(contactController,'mobilenumber',post.get('MobileNumber'));
-     set(contactController,'sname',post.get('MobileNumber'));
 
 
 
@@ -37,6 +40,12 @@ export default Controller.extend({
       let thiss=this;
       let contactController = getOwner(this).lookup('controller:contact');
       let id=this.model.id;
+      if(isEqual(this.model.Name,get(contactController,'name')) && isEqual(this.model.Nickname,get(contactController,'nickname')) && isEqual(this.model.Birthday,get(contactController,'birthday')) && isEqual(this.model.email,get(contactController,'email')) && isEqual(this.model.MobileNumber,get(contactController,'mobilenumber')))
+      {
+        alert("No change in the fields");
+        return;
+      }
+
 
 
       this.store.findRecord('contact', this.model.id, { backgroundReload: false }).then(function(post) {
@@ -54,7 +63,7 @@ export default Controller.extend({
    this.get('router').transitionTo('details',id);
 
 
-    }
+ }
     }
 
 });

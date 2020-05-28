@@ -15,9 +15,13 @@ actions:{
     this.toggleProperty('showContent');
     this.set('isShow',id);
   },
-  hide(){
-    this.set('showContent',true);
+  hide(v){
+    if(v){
+      this.set('showContent',false);
 
+    }else{
+    this.set('showContent',true);
+    }
   }
 }
 });
