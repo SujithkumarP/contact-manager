@@ -15,18 +15,7 @@ About
 </nav>
 
 {{#if this.isLoading}}
-Loading..
-<div class="spinner">
-  <div class="rect1"></div>
-  <div class="rect2"></div>
-  <div class="rect3"></div>
-  <div class="rect4"></div>
-  <div class="rect5"></div>
-  Fetching items...
-</div>
+
 {{/if}}
-
-  <div>
-
 {{outlet}}
-</div>
+{{outlet "edit"}}

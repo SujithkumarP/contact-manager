@@ -1,4 +1,8 @@
 import Route from '@ember/routing/route';
+import Ember from 'ember';
 
-export default class ApplicationRoute extends Route {
-}
+
+
+export default Route.extend({
+
+});

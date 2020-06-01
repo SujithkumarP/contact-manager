@@ -1,4 +1,4 @@
-  <LinkTo @route="contact.new">
+  <LinkTo @route="createcontact">
   <button type="submit" class="btn btn-primary">+ Add New person</button>
 </LinkTo>
 <table class="table table-hover">
@@ -15,31 +15,30 @@
   </thead>
   <tbody>
       {{#each this.model as |person|}}
-  <tr onclick={{action "showDetails" person.id}}>
+  <tr onclick={{action "showDetails" person}}>
       <td>{{person.Name}}</td>
       <td>{{person.Nickname}}</td>
       <td>{{person.Birthday}}</td>
       <td>{{person.email}}</td>
       <td>{{person.MobileNumber}}</td>
-      <td><LinkTo @route="contact.edit" @model={{person.id}}>
-      <button type="submit" class="btn btn-warning btn-sm" onclick={{action "hide" null}}>Edit contact</button>
+      <td><LinkTo @route="addcontact" @model={{person.id}}>
+      <button type="submit" class="btn btn-warning btn-sm">Edit contact</button>
     </LinkTo></td>
 
 </tr>
-    {{#if this.showContent}}
-    {{#if (eq person.id this.isShow)}}
-   <div class="left-border">
 
-    <ShowDetails @name={{person.Name}} @nickname={{person.Nickname}} @birthday={{person.Birthday}} @email={{person.email}} @mobilenumber={{person.MobileNumber}}/>
-    <div class="ml-4">
-    <LinkTo @route="details" @model={{person.id}}>
-    <button type="submit" class="btn btn-warning btn-sm">View Seprately</button>
-  </LinkTo>
-</div>
-  </div>
-    {{/if}}
-    {{/if}}
 
     {{/each}}
   </tbody>
 </table>
+{{#if this.showContent}}
+<div class="left-border col-5">
+
+<ShowDetails @name={{this.name}} @nickname={{this.nickname}} @birthday={{this.birthday}} @email={{this.email}} @mobilenumber={{this.mobileNumber}}/>
+<div class="ml-5">
+<LinkTo @route="details" @model={{this.id}}>
+<button type="submit" class="btn btn-warning btn-sm">View Seprately</button>
+</LinkTo>
+</div>
+</div>
+{{/if}}

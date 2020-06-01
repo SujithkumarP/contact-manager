@@ -17,4 +17,8 @@ Router.map(function() {
     this.route('new');
     this.route('edit',{path:'edit/:contact_id'});
   });
+  this.route('application-loading');
+  this.route('home-loading');
+  this.route('addcontact-loading');
+  this.route('details-loading');
 });
