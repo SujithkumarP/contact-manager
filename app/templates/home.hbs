@@ -25,16 +25,14 @@
       <button type="submit" class="btn btn-warning btn-sm">Edit contact</button>
     </LinkTo></td>
 
+
 </tr>
 
 
     {{/each}}
   </tbody>
 </table>
-{{#if this.showContent}}
+
 <div class="left-border col-5">
-
-<ShowDetails @name={{this.name}} @nickname={{this.nickname}} @birthday={{this.birthday}} @email={{this.email}} @mobilenumber={{this.mobileNumber}}/>
-
+{{outlet}}
 </div>
-{{/if}}
