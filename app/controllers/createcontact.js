@@ -75,7 +75,7 @@ add(){
  });
 
 
- this.get('router').transitionTo('details',id);
+ this.get('router').transitionTo('home');
     return;
   }
   else{
@@ -103,7 +103,7 @@ add(){
  newc.save();
  alert("Contact Has Been Added Successfully");
 
- this.get('router').transitionTo('details',newc.get('id'));
+ this.get('router').transitionTo('home');
 
 
 }

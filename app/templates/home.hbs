@@ -35,10 +35,6 @@
 <div class="left-border col-5">
 
 <ShowDetails @name={{this.name}} @nickname={{this.nickname}} @birthday={{this.birthday}} @email={{this.email}} @mobilenumber={{this.mobileNumber}}/>
-<div class="ml-5">
-<LinkTo @route="details" @model={{this.id}}>
-<button type="submit" class="btn btn-warning btn-sm">View Seprately</button>
-</LinkTo>
-</div>
+
 </div>
 {{/if}}
