@@ -13,14 +13,8 @@ Router.map(function() {
   });
   this.route('addcontact',{path:'addcontact/:person_name'});
   this.route('createcontact');
-  this.route('details',{path:'details/:contact_id'});
 
-  this.route('contact', function() {
-    this.route('new');
-    this.route('edit',{path:'edit/:contact_id'});
-  });
   this.route('application-loading');
   this.route('home-loading');
   this.route('addcontact-loading');
-  this.route('details-loading');
 });

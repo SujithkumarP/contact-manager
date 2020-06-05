@@ -15,9 +15,7 @@ birthday:null,
 email:null,
 mobilenumber:null,
 idd:null,
-init(){
-  this._super(...arguments);
-},
+
 actions:{
   setValues(val) {
     if(isEqual(val,"create")){
@@ -31,7 +29,6 @@ actions:{
 
     }
 
-    console.log("set Values called" + this.model.Name);
       let post=this.model;
 
      this.set('name',post.get('Name'));
