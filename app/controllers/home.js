@@ -1,7 +1,6 @@
 import Controller from '@ember/controller';
-import { inject as service } from '@ember/service';
+import { inject  } from '@ember/service';
 import { isEqual } from '@ember/utils'
-import { isEmpty } from '@ember/utils';
 import Ember from 'ember';
 
 
@@ -17,12 +16,7 @@ birthday:null,
 email:null,
 mobileNumber:null,
 contactId:null,
-init(){
-  this._super(...arguments);
-  // this.set('showContent',false);
-  // this.set('isShow',null);
 
-},
 actions:{
 
       showDetails(person){
@@ -36,6 +30,6 @@ actions:{
         this.get('router').transitionTo('home.details',person.id);
       }
 
-  
+
 }
 });

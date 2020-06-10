@@ -1,12 +1,12 @@
 import Route from '@ember/routing/route';
-import { getOwner } from '@ember/application';
-import { set } from '@ember/object';
+import { isEqual } from '@ember/utils'
+
 
 
 export default Route.extend({
   // templateName:'createcontact',
   model(params){
-      if(Ember.isEqual(params.person_name,"null"))
+      if(isEqual(params.person_name,"null"))
       {
         return null;
       }

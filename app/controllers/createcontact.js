@@ -50,7 +50,6 @@ add(){
 
   if(this.idd){
     if(user.hasValidEmail || isEmpty(this.get('email'))){
-    let id=this.model.id;
     if(isEqual(this.model.Name,this.get('name')) && isEqual(this.model.Nickname,this.get('nickname')) && isEqual(this.model.Birthday,this.get('birthday')) && isEqual(this.model.email,this.get('email')) && isEqual(this.model.MobileNumber,this.get('mobilenumber')))
     {
       alert("No change in the fields");
